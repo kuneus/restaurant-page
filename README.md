@@ -1,10 +1,3 @@
-# new-project-template
+# Restaurant Page
 
-This template includes ESLint & Prettier for Javascript and comes with HTML, CSS, and JS files to get started.
-
-eslint: ^8.37.0,
-eslint-config-airbnb-base: ^15.0.0,
-eslint-config-prettier: ^8.8.0,
-prettier: 2.8.7
-
-Remember to npm install after cloning this template.
+This is the Restaurant page assignment as part of the Odin Project curriculum. The aim of this project was to create a simple restaurant homepage using dynamic rendering techniques via DOM manipulation while practicing the use of Javascript ES6 modules.
