@@ -1,5 +1,16 @@
-console.log('hello world!');
-console.log('checking 1,2,3');
-const works = 'checking if this works';
+import { pageLoad } from './pageload';
 
-console.log(works);
+function createElement(elementType, eleClass, id, text) {
+  let element = document.createElement(elementType);
+  if (eleClass) {
+    element.classList.add(eleClass);
+  }
+  if (id) {
+    element.id(id);
+  }
+  if (text) {
+    element.textContent = text;
+  }
+}
+
+export { createElement };
