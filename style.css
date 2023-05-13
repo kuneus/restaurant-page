@@ -92,34 +92,85 @@ video {
   vertical-align: baseline;
 }
 
+body {
+  background-color: rgba(255, 201, 131, 0.474);
+}
+
 .content {
   display: flex;
   flex-direction: column;
 }
 
+/* **** <---- HEADER ----> **** */
 .header {
   display: grid;
   grid-template-columns: 3fr 1fr 1fr;
   height: 10vh;
-  font-size: 2rem;
+  font-size: 1.5rem;
   align-items: center;
 }
 
+/* Header cafe title */
 .header div:first-child {
-  font-size: 3rem;
+  font-family: 'philosophy', sans-serif;
+  margin-left: 10px;
+}
+
+/* **** <---- MAIN ----> **** */
+
+.main-cont {
+  overflow-y: scroll;
+  height: 85vh;
 }
 
 .main {
   height: 85vh;
-  border: solid 1px black;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  background-size: cover;
 }
 
+/* container for welcome message */
+.welCont {
+  align-items: center;
+  display: flex;
+  padding: 15px;
+  flex-direction: column;
+  background-color: rgba(156, 114, 59, 0.474);
+  border-radius: 15px;
+  margin-top: 50px;
+}
+
+/* Line 1 of welcome message */
+.welCont div:first-child {
+  font-family: 'philosophy', sans-serif;
+  font-size: 2rem;
+}
+/* Line 2 of welcome message */
+.welCont div:nth-child(2) {
+  font-family: 'Caligruf', sans-serif;
+  font-size: 3.5rem;
+}
+
+/* **** <---- FOOTER ----> **** */
 .footer {
   height: 4vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Add spacing for github link */
+.footer a {
+  margin: 5px;
+}
+
+.footer p {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  color: white;
 }
