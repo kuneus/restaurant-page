@@ -1,44 +1,53 @@
-import { createElement } from './index';
+import { createAndAppend } from './index';
+// createAndAppend (elementType, eleClass, eleID, eleText, eleParent)
 
 const pageLoad = (() => {
   const content = document.getElementById('content');
-  const header = document.createElement('header');
-  header.classList.add('header');
-  content.appendChild(header);
 
+  // header
+  const header = createAndAppend('header', 'header', null, null, content);
+
+  // header elements
+  let headerArr = ['Philosophy Coffee Company', 'Menu', 'Contact Us'];
   for (let i = 0; i <= 2; i++) {
-    const element = document.createElement('div');
-    if (i === 0) {
-      element.textContent = 'Philosophy Coffee Company';
-    } else if (i === 1) {
-      element.textContent = 'Menu';
-    } else {
-      element.textContent = 'Contact Us';
-    }
-    header.appendChild(element);
+    createAndAppend('div', null, null, headerArr[i], header);
   }
 
-  const main = document.createElement('div');
-  main.classList.add('main');
-  content.appendChild(main);
-  const title = document.createElement('div');
-  title.classList.add('title');
-  title.textContent =
-    'Welcome to Philosophy Coffee Company! Where great minds drink alike';
-  main.appendChild(title);
-  // const example = createElement(
-  //   'div',
-  //   null,
-  //   null,
-  //   'Where great minds drink alike!',
-  // );
-  // main.appendChild(example);
+  const container = createAndAppend('div', 'main-cont', null, null, content);
 
-  const footer = document.createElement('footer');
-  footer.classList.add('footer');
+  // main body
+  const main = createAndAppend('div', 'main', 'main-body', null, container);
+  main.style.backgroundImage = "url('./images/cafe.png')";
+
+  // welcome message for main body
+  const welContainer = createAndAppend('div', 'welCont', null, null, main);
+  const welcomeMsg1 = 'Welcome to Philosophy Coffee Company';
+  const welcomeMsg2 = 'Where great minds drink alike';
+  createAndAppend('div', null, null, welcomeMsg1, welContainer);
+  createAndAppend('div', null, null, welcomeMsg2, welContainer);
+
+  // business hours
+  const hoursContainer = createAndAppend('div', null, null, null, container);
+  let daysArr = [
+    'Business Hours:',
+    'Mon: 6am - 9pm',
+    'Tue: 6am - 9pm',
+    'Wed: 6am - 9pm',
+    'Thu: 6am - 9pm',
+    'Fri: 6am - 11pm',
+    'Sat: 8am - 11pm',
+    'Sun: 8am - 9pm',
+  ];
+  for (let i = 0; i < daysArr.length; i++) {
+    createAndAppend('div', null, null, daysArr[i], hoursContainer);
+  }
+
+  // footer
+  const footer = createAndAppend('footer', 'footer', null, null, content);
   footer.innerHTML =
-    'Made by Kuni <a href="https://github.com/kuneus">@kuneus<a>';
-  content.appendChild(footer);
+    'Made by Kuni <a href="https://github.com/kuneus"> @Kuneus<a>';
+  const pcMsg = 'Photo by Polina Kuzovkova on Unsplash';
+  createAndAppend('p', null, null, pcMsg, footer);
 })();
 
 export { pageLoad };

@@ -1,16 +1,18 @@
 import { pageLoad } from './pageload';
 
-function createElement(elementType, eleClass, id, text) {
+function createAndAppend(elementType, eleClass, eleID, eleText, eleParent) {
   let element = document.createElement(elementType);
   if (eleClass) {
     element.classList.add(eleClass);
   }
-  if (id) {
-    element.id(id);
+  if (eleID) {
+    element.setAttribute('id', eleID);
   }
-  if (text) {
-    element.textContent = text;
+  if (eleText) {
+    element.textContent = eleText;
   }
+  eleParent.appendChild(element);
+  return element;
 }
 
-export { createElement };
+export { createAndAppend };
