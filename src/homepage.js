@@ -1,25 +1,7 @@
-import { createAndAppend } from './index';
-// createAndAppend (elementType, eleClass, eleID, eleText, eleParent)
+import { createAndAppend, topCont } from './index';
 
-const pageLoad = (() => {
-  const content = document.getElementById('content');
-
-  // header
-  const header = createAndAppend('header', 'header', null, null, content);
-
-  // header elements
-  let headerArr = ['Philosophy Coffee Company', 'Menu', 'Contact Us'];
-  for (let i = 0; i <= 2; i++) {
-    createAndAppend('div', `headerEls`, `headerEl${[i]}`, headerArr[i], header);
-  }
-
-  // main container
-  const container = createAndAppend('div', null, 'main-cont', null, content);
-
-  // top container
-  const topCont = createAndAppend('div', null, 'topCont', null, container);
-  topCont.style.backgroundImage = "url('./images/cafe.png')";
-
+const homePage = () => {
+  console.log('homepage clicked!');
   // welcome message for main body
   const pageTitle = createAndAppend('div', null, 'page-title', null, topCont);
   const welcomeMsg1 = 'Welcome to Philosophy Coffee Company';
@@ -58,13 +40,6 @@ const pageLoad = (() => {
   for (let i = 0; i < addressArr.length; i++) {
     createAndAppend('div', null, null, addressArr[i], addressCont);
   }
+};
 
-  // footer
-  const footer = createAndAppend('footer', 'footer', null, null, content);
-  footer.innerHTML =
-    'Made by Kuni <a href="https://github.com/kuneus"> @Kuneus<a>';
-  const pcMsg = 'Photo by Polina Kuzovkova on Unsplash';
-  createAndAppend('p', null, null, pcMsg, footer);
-})();
-
-export { pageLoad };
+export { homePage };
