@@ -1,6 +1,7 @@
 import { pageLoad } from './pageload';
 import { menuPage } from './menu';
 import { homePage } from './homepage';
+import { contactPage } from './contact';
 
 function createAndAppend(elementType, eleClass, eleID, eleText, eleParent) {
   let element = document.createElement(elementType);
@@ -20,6 +21,7 @@ function createAndAppend(elementType, eleClass, eleID, eleText, eleParent) {
 const headerEls = document.getElementsByClassName('headerEls');
 const pageTitle = document.getElementById('page-title');
 const topCont = document.getElementById('topCont');
+const bottCont = document.getElementById('bottCont');
 
 let homeStatus = true;
 let menuStatus = false;
@@ -49,9 +51,9 @@ for (let i = 0; i < headerArr.length; i++) {
       }
     } else if (i === 2) {
       if (contactStatus === false) {
-        console.log('Contact us!');
         setPageStatus(false, false, true);
         topCont.innerHTML = '';
+        contactPage();
       }
     }
   });

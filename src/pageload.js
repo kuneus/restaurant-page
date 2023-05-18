@@ -8,7 +8,7 @@ const pageLoad = (() => {
   const header = createAndAppend('header', 'header', null, null, content);
 
   // header elements
-  let headerArr = ['Philosophy Coffee Company', 'Menu', 'Contact Us'];
+  let headerArr = ['Home', 'Menu', 'Contact Us'];
   for (let i = 0; i <= 2; i++) {
     createAndAppend('div', `headerEls`, `headerEl${[i]}`, headerArr[i], header);
   }
@@ -61,7 +61,8 @@ const pageLoad = (() => {
 
   // footer
   const footer = createAndAppend('footer', 'footer', null, null, content);
-  footer.innerHTML =
+  const authorCredit = createAndAppend('div', null, null, null, footer);
+  authorCredit.innerHTML =
     'Made by Kuni <a href="https://github.com/kuneus"> @Kuneus<a>';
   const pcMsg = 'Photo by Polina Kuzovkova on Unsplash';
   createAndAppend('p', null, null, pcMsg, footer);
