@@ -92,56 +92,56 @@ video {
   vertical-align: baseline;
 }
 
+:root {
+  --background-color: rgba(189, 189, 189, 0.8);
+}
+
 body {
   font-family: 'Ubuntu Mono', sans-serif;
 }
 
-.content {
+#content {
   display: flex;
   flex-direction: column;
+  background-size: cover;
 }
 
 /* **** <---- HEADER ----> **** */
 .header {
-  display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
+  display: flex;
   height: 10vh;
   font-size: 1.5rem;
   align-items: center;
-}
-
-.header div {
-  justify-self: center;
-}
-
-/* Header cafe title */
-.header div:first-child {
-  font-family: 'philosophy', sans-serif;
-  margin-left: 40px;
-  justify-self: flex-start;
+  color: rgb(64, 64, 64);
+  justify-content: center;
+  gap: 30px;
 }
 
 .header div:hover {
   cursor: pointer;
-  border-bottom: solid 1px rgba(156, 114, 59, 1);
+  border-bottom: solid 1px var(--background-color);
   transform: scale(1.1);
 }
 
-/* **** <---- MAIN ----> **** */
-
-#main-cont {
-  height: 85vh;
+/* Add side margins for Menu header */
+.header div:nth-child(2) {
+  margin: 0px 20px;
 }
 
+/* **** <---- MAIN ----> **** */
 #topCont {
-  height: 85vh;
-  border-top: solid 1px black;
-  border-bottom: solid 1px black;
+  height: 74vh;
+  border-top: solid 4px rgb(45, 45, 45);
+  border-bottom: solid 4px rgb(44, 44, 44);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   background-size: cover;
+  overflow-y: scroll;
+  gap: 50px;
+  padding-top: 100px;
+  overflow-x: hidden;
 }
 
 /* container for welcome message */
@@ -150,11 +150,11 @@ body {
   display: flex;
   padding: 15px;
   flex-direction: column;
-  background-color: rgba(156, 114, 59, 0.6);
+  background-color: var(--background-color);
   border-radius: 15px;
-  margin-top: 50px;
   font-family: 'philosophy', sans-serif;
   font-size: 2rem;
+  width: 100vw;
 }
 
 /* Line 2 of welcome message */
@@ -163,48 +163,135 @@ body {
   font-size: 3.5rem;
 }
 
-#menu-cont > div:first-child {
-  margin: 50px 0px;
-  background-color: rgba(156, 114, 59, 0.6);
-  border-radius: 15px;
-  padding: 15px;
-}
-
+/* Container for business hours and address */
 #bottCont {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 20px;
-  background-color: rgba(156, 114, 59, 0.6);
+  background-color: var(--background-color);
   padding: 20px;
   gap: 50px;
   border-radius: 15px;
   color: white;
 }
 
+/* Hours and Address on home page */
 .hours div:first-child,
 .address div:first-child {
   font-size: 1.3rem;
   margin-bottom: 10px;
 }
 
+/* MENU PAGE */
+#menu-cont > div:first-child {
+  border-radius: 15px;
+  padding: 15px;
+  width: 75vw;
+}
+
+/* Container for Espresso and Brewed categories */
+#menu-items {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Headers for coffee categories */
+.coTitle {
+  font-size: 2rem;
+  color: white;
+  margin: 20px 0px;
+}
+
+/* Container for coffee cards */
+.coCont {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  align-items: start;
+}
+
+.coffeeCard {
+  box-shadow: 0px 0px 20px rgb(1, 31, 0);
+}
+
+/* Info for each menu item */
+.objInfo {
+  background-color: var(--background-color);
+  padding: 2px 10px 15px 15px;
+  height: 45px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+/* Display drink size and price on single line */
+.sz-line {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Image for each coffee card */
+.imgCont {
+  background-size: 100% auto;
+  max-width: 100%;
+  height: 300px;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* CONTACT PAGE FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--background-color);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+input {
+  height: 30px;
+}
+
+input,
+textarea {
+  background-color: rgba(238, 238, 238, 0.9);
+  border-style: none;
+  border-radius: 0px;
+  color: black;
+  text-indent: 5px;
+  resize: none;
+}
+
+::placeholder {
+  color: black;
+  opacity: 1;
+}
+
+#submit-btn {
+  width: 70px;
+  align-self: center;
+  border-radius: 4px;
+  border-style: none;
+  background-color: rgb(47, 47, 47);
+  color: white;
+}
+
 /* **** <---- FOOTER ----> **** */
 .footer {
   height: 4vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  margin: 0px 20px;
+  color: black;
 }
 
 /* Add spacing for github link */
 .footer a {
   margin: 5px;
-}
-
-/* photo credit */
-.footer p {
-  position: absolute;
-  right: 50px;
-  bottom: 50px;
-  color: white;
+  text-decoration: none;
+  color: rgb(139, 56, 255);
+  font-size: 1.2rem;
 }
