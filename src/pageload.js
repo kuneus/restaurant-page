@@ -65,7 +65,7 @@ const pageLoad = (() => {
   authorCredit.innerHTML =
     'Made by Kuni <a href="https://github.com/kuneus"> @Kuneus<a>';
   const pcMsg = 'Photo by Polina Kuzovkova on Unsplash';
-  createAndAppend('p', null, null, pcMsg, footer);
+  createAndAppend('p', null, 'pcMsg', pcMsg, footer);
 })();
 
 export { pageLoad };

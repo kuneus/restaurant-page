@@ -21,7 +21,11 @@ function createAndAppend(elementType, eleClass, eleID, eleText, eleParent) {
 const headerEls = document.getElementsByClassName('headerEls');
 const pageTitle = document.getElementById('page-title');
 const topCont = document.getElementById('topCont');
-const bottCont = document.getElementById('bottCont');
+const setHomeBG = () => {
+  topCont.style.backgroundImage = "url('./images/cafe.png')";
+  document.getElementById('pcMsg').textContent =
+    'Photo by Polina Kuzovkova on Unsplash';
+};
 
 let homeStatus = true;
 let menuStatus = false;
@@ -59,4 +63,4 @@ for (let i = 0; i < headerArr.length; i++) {
   });
 }
 
-export { createAndAppend, pageTitle, topCont };
+export { createAndAppend, pageTitle, topCont, setHomeBG };

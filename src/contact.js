@@ -1,8 +1,8 @@
-import { createAndAppend, topCont } from './index';
+import { createAndAppend, setHomeBG, topCont } from './index';
 
 const contactPage = () => {
   // reset homepage background
-  topCont.style.backgroundImage = "url('./images/cafe.png')";
+  setHomeBG();
 
   // set title of page to 'Contact Us'
   createAndAppend('div', null, 'page-title', 'Contact Us', topCont);

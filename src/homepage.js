@@ -1,8 +1,9 @@
-import { createAndAppend, topCont } from './index';
+import { createAndAppend, topCont, setHomeBG } from './index';
 
 const homePage = () => {
   // reset homepage background
-  topCont.style.backgroundImage = "url('./images/cafe.png')";
+  setHomeBG();
+
   // welcome message for main body
   const pageTitle = createAndAppend('div', null, 'page-title', null, topCont);
   const welcomeMsg1 = 'Welcome to Philosophy Coffee Company';
